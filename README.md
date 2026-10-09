@@ -1,8 +1,8 @@
 # TelcoSec Operator CLI (`telcosec`)
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Go Report Card](https://goreportcard.com/badge/github.com/TelcoSec-Tools/telcosec-cli)](https://goreportcard.com/report/github.com/TelcoSec-Tools/telcosec-cli)
-[![Platform: Linux](https://img.shields.io/badge/Platform-Linux%20(x86__64%20%7C%20arm64)-informational.svg)](https://chisel.telcosec.net)
+[![Go Report Card](https://goreportcard.com/badge/github.com/TelcoChisel/telcosec-cli)](https://goreportcard.com/report/github.com/TelcoChisel/telcosec-cli)
+[![Platform: Linux](https://img.shields.io/badge/Platform-Linux%20(x86__64%20%7C%20arm64)-informational.svg)](https://telcochisel.com)
 
 The official standalone operator CLI and telemetry suite for telecom security engineers, cellular penetration testers, and SDR researchers. 
 
@@ -16,7 +16,7 @@ The official standalone operator CLI and telemetry suite for telecom security en
 - **SDR & Radio Hardware Diagnostics**: Automated discovery and health audits for Ettus USRP (UHD), Great Scott Gadgets HackRF, Nuand BladeRF, LimeSDR, RTL-SDR, and ADALM-PLUTO.
 - **10GbE Network Transceiver Optimization**: One-click Jumbo Frame configuration (MTU 9000), 4096 RX/TX ring buffer descriptors, and 64 MB socket buffers for high-bandwidth SDRs (USRP X310, N310).
 - **5G Standalone Lifecycle Management**: Controls Open5GS core network services and provisions subscriber credentials (`IMSI`, `K`, `OPc`) via `open5gs-dbctl`.
-- **10-Tier Modular Metapackage Management**: Seamless interface to inspect, install, and audit modular telecom suites (`telcosec pkg list`, `telcosec pkg info 5g`, `sudo telcosec pkg install sdr sim`).
+- **11-Tier Modular Metapackage Management**: Seamless interface to inspect, install, and audit modular telecom suites (`telcosec pkg list`, `telcosec pkg info 5g`, `sudo telcosec pkg install sdr sim`).
 - **Smartcard, SIM & eSIM Auditing**: Pure Go ISO/IEC 7816-3 Answer-to-Reset (ATR) decoding, PC/SC reader monitoring, Osmocom SIMtrace 2 sniffer control, and eSIM Local Profile Assistant (`lpac`) integration (`telcosec sim`).
 - **Tool Catalog Keyword Search**: Instantly searches installed desktop tools and applications by protocol keyword (`sctp`, `diameter`, `ss7`, `nas`, `ran`).
 - **Operational Profile Switching**: Toggles between Lab Mode (`rp_filter=0`, unrestricted packet crafting) and Field Mode (hardened reverse path filtering).
@@ -47,20 +47,20 @@ sudo apt-get update && sudo apt-get install -y telcosec-cli
 
 ### macOS & Linux (Homebrew)
 
-Install `telcosec` on macOS (Apple Silicon & Intel) or Linux via the official [TelcoSec Homebrew tap](https://github.com/TelcoSec-Tools/homebrew-tap):
+Install `telcosec` on macOS (Apple Silicon & Intel) or Linux via the official [TelcoChisel Homebrew tap](https://github.com/TelcoChisel/homebrew-tap):
 
 ```bash
-# Tap the official TelcoSec repository
-brew tap telcosec-tools/tap
+# Tap the official TelcoChisel repository
+brew tap telcochisel/tap
 
 # Install telcosec (includes shell completions & man pages)
 brew install telcosec
 
 # Or install directly in a single command:
-brew install telcosec-tools/tap/telcosec
+brew install telcochisel/tap/telcosec
 
 # To compile bleeding-edge from trunk:
-brew install --HEAD telcosec-tools/tap/telcosec
+brew install --HEAD telcochisel/tap/telcosec
 ```
 
 ### Docker & Container Image (Multi-Architecture)
@@ -83,11 +83,11 @@ docker run --rm -it --privileged --net=host -v /dev:/dev -v /sys:/sys ghcr.io/te
 
 ### Manual Debian Package Installation (.deb)
 
-Pre-built multi-architecture `.deb` packages (`amd64` and `arm64`) are available on the [GitHub Releases](https://github.com/TelcoSec-Tools/telcosec-cli/releases) page:
+Pre-built multi-architecture `.deb` packages (`amd64` and `arm64`) are available on the [GitHub Releases](https://github.com/TelcoChisel/telcosec-cli/releases) page:
 
 ```bash
 # Install via dpkg
-sudo dpkg -i telcosec-cli_3.0.0-1_amd64.deb
+sudo dpkg -i telcosec-cli_2026.2-1_amd64.deb
 ```
 
 ### Building Debian Package (.deb)
@@ -101,7 +101,7 @@ dpkg-buildpackage -us -uc -b
 
 ### Building from Source
 ```bash
-git clone https://github.com/TelcoSec-Tools/telcosec-cli.git
+git clone https://github.com/TelcoChisel/telcosec-cli.git
 cd telcosec-cli
 make build
 sudo make install
@@ -123,7 +123,7 @@ sudo make install
 | `telcosec sim` | `status`, `readers`, `atr [hex]`, `trace [list\|sniff]`, `lpac`, `shell` | Smartcard, SIM & eSIM auditing suite (PC/SC, ISO 7816-3 ATR decoder, SIMtrace 2, lpac). |
 | `telcosec 5g-sa` | `start`, `stop`, `status`, `add-sub` | Manage local Open5GS 5G Standalone core network and provision test SIMs. |
 | `telcosec scan` | `sctp`, `sip`, `asleap` | Launch telecom signaling assessment wizards and scanners. |
-| `telcosec search` | `<query>` | Search the 88 installed telecom tools and desktop entries by keyword. |
+| `telcosec search` | `<query>` | Search the 100 installed telecom tools and desktop entries by keyword. |
 | `telcosec docs` | | Open local offline documentation (`/usr/share/doc/telcosec/index.html`) or online docs portal. |
 | `telcosec academy`| | Launch TelcoSec Academy interactive field labs bridge (`app.telcosec.net`). |
 | `telcosec feedback`| `review` | Open SourceForge user reviews and community support channels. |
