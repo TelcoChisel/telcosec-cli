@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-KEY_EMAIL="repo@telcosec.net"
+KEY_EMAIL="repo@telcochisel.com"
 KEY_NAME="TelcoSec Package Signing Key"
 KEY_COMMENT="TelcoChisel Official APT Repository"
 
@@ -9,7 +9,7 @@ KEY_COMMENT="TelcoChisel Official APT Repository"
 # verify this fingerprint (TELCOSEC_FPR in TelcoChiselOS 00-install-all-packages.sh
 # and install-telcochisel-repo.sh). CI MUST sign with exactly this key — never a
 # freshly generated one, or every client's apt enrollment breaks.
-EXPECTED_FPR="6326A34C15FEF05FBD63518B4325182E2F0D9DB9"
+EXPECTED_FPR="3DDEADD34827571266C41601C3BB61613B110128"
 
 mkdir -p ~/.gnupg
 chmod 700 ~/.gnupg
